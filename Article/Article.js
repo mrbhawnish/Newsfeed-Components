@@ -138,9 +138,10 @@ function articleMaker (title, date, firstP, secondP, thirdP){
   p4El.textContent = thirdP;
   spanEl.textContent = "Expand";
   spanEl.style.width = "2px";
+  spanEl.style.height = "2px";
   spanEl.style.fontStyle = "italic";
   spanEl.style.fontSize = "18px"
-  
+
   //Appending childs to parent
   articleDiv.appendChild(h2El)
   articleDiv.appendChild(p1El)
