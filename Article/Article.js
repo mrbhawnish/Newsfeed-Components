@@ -111,3 +111,59 @@ const data = [
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 */
+
+
+function articleMaker (title, date, firstP, secondP, thirdP){
+  
+  
+  //creating Elements:
+  let articleDiv = document.createElement('div');
+  let h2El = document.createElement('h2');
+  let p1El = document.createElement('p');
+  let p2El = document.createElement('p');
+  let p3El = document.createElement('p');
+  let p4El = document.createElement('p');
+  let spanEl = document.createElement('span');
+
+  //adding classes to the elements:
+  articleDiv.classList.add("article");
+  p1El.classList.add('date');
+  spanEl.classList.add('expandButton', 'article-open', 'close');
+  
+  //Adding texts OR innerHTML to the arguments
+  h2El.textContent = title;
+  p1El.textContent = date;
+  p2El.textContent = firstP;
+  p3El.textContent = secondP;
+  p4El.textContent = thirdP;
+  spanEl.textContent = "Expand";
+  spanEl.style.width = "2px";
+  spanEl.style.height = "2px";
+  spanEl.style.fontStyle = "italic";
+  spanEl.style.fontSize = "18px"
+
+  //Appending childs to parent
+  articleDiv.appendChild(h2El)
+  articleDiv.appendChild(p1El)
+  articleDiv.appendChild(p2El)
+  articleDiv.appendChild(p3El)
+  articleDiv.appendChild(p4El)
+  articleDiv.appendChild(spanEl)
+
+  // Adding event listener on expandButton
+    spanEl.addEventListener('click', (event) => {
+     
+    articleDiv.classList.toggle('article-open')
+  
+   })
+
+  return articleDiv;
+  }
+
+  const articles = document.querySelector('.articles');
+ 
+  
+   data.forEach((obj) => {
+    
+     articles.appendChild(articleMaker(obj.date, obj.firstParagraph, obj.secondParagraph, obj.thirdParagraph))
+   });
