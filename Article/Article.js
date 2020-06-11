@@ -162,7 +162,6 @@ function articleMaker (title, date, firstP, secondP, thirdP){
 
   const articles = document.querySelector('.articles');
  
-  // let articleMaker = articleMaker(data.title, data.date, data.firstParagraph, data.secondParagraph, data.thirdParagraph)
   
    data.forEach((obj) => {
     
